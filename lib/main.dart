@@ -30,13 +30,25 @@ class _TestPageState extends State<TestPage> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text("El mar es azul?"),
-
-        TextButton(onPressed: () {}, child: Text("Verdadero")),
-
-        TextButton(onPressed: () {}, child: Text("Falso"))
-        
+        Expanded(
+            flex: 5,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Center(child: Text("El mar es azul?")),
+            )),
+        Expanded(
+            child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: TextButton(onPressed: () {}, child: Text("Verdadero")),
+        )),
+        Expanded(
+            child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: TextButton(onPressed: () {}, child: Text("Falso")),
+        ))
       ],
     );
   }
